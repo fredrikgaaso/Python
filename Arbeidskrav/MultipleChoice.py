@@ -36,6 +36,8 @@ def run_quiz(q, a):
             print("Your answer:", user_ans)
             print("Correct answer:", correct_ans)
             print()
+    else:
+        print("You got everything correct!")
 
 
 def login_info():
