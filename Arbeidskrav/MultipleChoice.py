@@ -15,7 +15,7 @@ questions = [
 
 answers = ["b", "c", "a", "b", "c", "b", "d", "c", "c", "b"]
 
-loginInfo = {"PGR107": "Python"}
+loginInfo = {"PGR107": "Pythons"}
 
 
 def run_quiz(q, a):
