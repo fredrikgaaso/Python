@@ -15,39 +15,41 @@ questions = [
 
 answers = ["b", "c", "a", "b", "c", "b", "d", "c", "c", "b"]
 
-loginInfo = {"PGR107": "Pythons"}
+loginInfo = {"PGR107": "Python"}
 
+def main():
+    def run_quiz(q, a):
+        score = 0
+        wrong_answers = []
+        for i in range(len(q)):
+            user_answer = input(q[i] + "\nYour answer: ").lower()
+            if user_answer == a[i]:
+                score += 1
+            else:
+                wrong_answers.append((questions[i], user_answer, answers[i]))
+        print("You got", score, "out of", len(q), "correct.")
 
-def run_quiz(q, a):
-    score = 0
-    wrong_answers = []
-    for i in range(len(q)):
-        user_answer = input(q[i] + "\nYour answer: ").lower()
-        if user_answer == a[i]:
-            score += 1
+        if score < len(questions):
+            print("Here are the correct answers for the questions you answered wrong:\n")
+            for question, user_ans, correct_ans in wrong_answers:
+                print("Question:", question)
+                print("Your answer:", user_ans)
+                print("Correct answer:", correct_ans)
+                print()
         else:
-            wrong_answers.append((questions[i], user_answer, answers[i]))
-    print("You got", score, "out of", len(q), "correct.")
-
-    if score < len(questions):
-        print("Here are the correct answers for the questions you answered wrong:\n")
-        for question, user_ans, correct_ans in wrong_answers:
-            print("Question:", question)
-            print("Your answer:", user_ans)
-            print("Correct answer:", correct_ans)
-            print()
-    else:
-        print("You got everything correct!")
+            print("You got everything correct!")
 
 
-def login_info():
-    username_input = input("Enter Username: ")
-    password_input = input("Enter Password: ")
-    if username_input in loginInfo and password_input == loginInfo[username_input]:
-        run_quiz(questions, answers)
-    else:
-        print("Invalid username and/or password")
-        login_info()
+    def login_info():
+        username_input = input("Enter Username: ")
+        password_input = input("Enter Password: ")
+        if username_input in loginInfo and password_input == loginInfo[username_input]:
+            run_quiz(questions, answers)
+        else:
+            print("Invalid username and/or password")
+            login_info()
 
 
-login_info()
+    login_info()
+
+main()
