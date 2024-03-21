@@ -17,6 +17,7 @@ answers = ["b", "c", "a", "b", "c", "b", "d", "c", "c", "b"]
 
 loginInfo = {"PGR107": "Python"}
 
+
 def main():
     def run_quiz(q, a):
         score = 0
@@ -39,7 +40,6 @@ def main():
         else:
             print("You got everything correct!")
 
-
     def login_info():
         username_input = input("Enter Username: ")
         password_input = input("Enter Password: ")
@@ -49,7 +49,7 @@ def main():
             print("Invalid username and/or password")
             login_info()
 
-
     login_info()
+
 
 main()
